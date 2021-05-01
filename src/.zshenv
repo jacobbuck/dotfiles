@@ -1,3 +1,6 @@
+# ANSI Colors
+export CLICOLOR=1
+
 # Default applications/binaries
 export BROWSER="Firefox"
 export EDITOR="micro"
