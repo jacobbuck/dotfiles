@@ -1,30 +1,82 @@
+[apply]
+  # Detect whitespace errors when applying a patch
+  whitespace = fix
+
+[branch]
+  # Automaticllu set up merging on pull for branches that exist on remote
+  autoSetupMerge = true
+  # Show most recently changed branches first
+  sort = -committerdate
+
+[color]
+  # Use colors in Git commands when outputting to the terminal
+  branch = auto
+  diff = auto
+  status = auto
+  ui = true
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
 [core]
-  excludesfile = ~/.gitignore
+  # Use custom `.gitignore` and `.gitattributes`
+  attributesFile = ~/.gitattributes
+  excludesFile = ~/.gitignore
+  # Treat spaces before tabs and all kinds of trailing whitespace as an error
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+[credential]
+  # Use macOS keychain for user credentials
+  helper = osxkeychain
 
 [diff]
+  # https://kaleidoscope.app is my preferred file comparison tool
   tool = Kaleidoscope
-
-[difftool]
-  prompt = false
 
 [difftool "Kaleidoscope"]
   cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+  prompt = false
+
+[fetch]
+  # Automatically remove any remote-tracking references that no longer exist on remote
+  prune = true
+
+[help]
+  # Automatically correct mistyped commands--with 3 second delay to bail if needed
+  autoCorrect = 3
+
+[include]
+  path = ~/.gitconfig.local
 
 [init]
   defaultBranch = main
 
 [merge]
+  # Include summaries of merged commits in newly created merge commit messages
+  log = true
+  # https://kaleidoscope.app is my preferred file comparison tool
   tool = Kaleidoscope
-
-[mergetool]
-  prompt = false
 
 [mergetool "Kaleidoscope"]
   cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  prompt = false
   trustExitCode = true
 
 [pull]
   rebase = false
 
-[include]
-  path = .gitconfig.local
+[push]
+  default = simple
