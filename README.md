@@ -1,5 +1,7 @@
 # dotfiles
 
+![screenshot](screenshot.png)
+
 ## Requirements
 
 - [Homebrew](https://brew.sh)
