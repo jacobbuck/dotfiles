@@ -77,7 +77,7 @@ prompt_gitstatus() {
   fi
 }
 
-PROMPT='%B%(5~|%-1~/…/%3~|%4~)%b$(prompt_gitstatus) %F{white}›%f '
+PROMPT='%F{blue}%(5~|%-1~/…/%3~|%4~)%f$(prompt_gitstatus) %F{white}›%f '
 
 #
 # Plugins
