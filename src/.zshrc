@@ -68,9 +68,8 @@ compinit
 #
 
 prompt_gitstatus() {
-  BRANCH=$(git branch --show-current 2> /dev/null)
-  if [ ! -z $BRANCH ]; then
-    echo -n " %F{cyan}$BRANCH%f"
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    echo -n " %F{cyan}$(git branch --show-current)%f"
     if [ ! -z "$(git status --porcelain)" ]; then
       echo -n '%F{magenta}∙%f'
     fi
