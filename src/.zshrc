@@ -68,7 +68,7 @@ compinit
 #
 
 prompt_gitstatus() {
-  BRANCH=$(git branch --format="%(refname:short)" 2> /dev/null)
+  BRANCH=$(git branch --show-current 2> /dev/null)
   if [ ! -z $BRANCH ]; then
     echo -n " %F{cyan}$BRANCH%f"
     if [ ! -z "$(git status --porcelain)" ]; then
