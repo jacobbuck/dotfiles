@@ -71,7 +71,7 @@ prompt_gitstatus() {
   BRANCH=$(git branch --format="%(refname:short)" 2> /dev/null)
   if [ ! -z $BRANCH ]; then
     echo -n " %F{cyan}$BRANCH%f"
-    if [ ! -z "$(git status --short)" ]; then
+    if [ ! -z "$(git status --porcelain)" ]; then
       echo -n '%F{magenta}∙%f'
     fi
   fi
