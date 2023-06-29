@@ -1,2 +1,0 @@
-#!/bin/bash
-find ./src -type f -exec bash -c 'cp -iv "$1" $HOME/' _ {} \;
