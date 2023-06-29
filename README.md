@@ -6,7 +6,11 @@
 
 - [Homebrew](https://brew.sh)
 - [macOS](https://www.apple.com/macos/)
-- [Zsh](http://zsh.sourceforge.net)
+- [Zsh](http://zsh.sourceforge.net) (native or installed via Homebrew)
+
+## Install
+
+Clone or download repository and run `install.sh`.
 
 ## Notes
 
